@@ -1,197 +1,149 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>App Rate</title>
-<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Oswald|Pontano+Sans' rel='stylesheet' type='text/css'>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<link rel="stylesheet" type="text/css" href="css/util.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Feedback</title>
 </head>
+
 <body>
-<div class="header-wrap">
-  <div class="header">
-    <div class="menu">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="feedback.html" class="active">Feedback</a></li>
-        <li><a href="#" class="active">About us</a></li>
-      </ul>
-    </div>
-    <div class="social-media">
-      <ul>
-        <li><a href="#"><img src="img/aim.gif" alt="aim" /></a></li>
-        <li><a href="#"><img src="img/facebook.gif" alt="facebook" /></a></li>
-        <li><a href="#"><img src="img/linkedin.gif" alt="linkedin" /></a></li>
-        <li><a href="#"><img src="img/twitter.gif" alt="twitter" /></a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-<!-- end of header wrapper -->
-<div class="logo-sarch-wrap">
-  <div class="logo-search-container">
-    <div class="logo">
-      <h1 style="margin-top: 50px;">Rate restaurant</h1>
-    </div>
-    <div class="search">
-      <div class="search-input">
-        <input type="text" class="search-text-field" placeholder="Search Restaurant" />
+  <div>
+    <div class="page-top">
+      <div class="top">
+        <div class="col-sm-12 col-md-12 col-xs-12 hover">
+          <div class="name-icon">
+            Feeback Restaurant
+          </div>
+        </div>
       </div>
-      <div class="search-button"><a href="#"><img src="img/serach-icon.gif" alt="search" /></a></div>
+      <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a class="active" href="feedback.html">Feedback</a>
+        <a class="active" href="search.html">Search</a>
+      </div>
+    </div>
+    <div class="body">
+      <h3 style="text-align: center; margin-top: 10px">Feedback Form</h3>
+      <div>
+        <div class="col-md-4 mb-3">
+          <form id="create-feedback" >
+            <div class="group">
+                <label>Restaurant Name</label>
+                <div>
+                  <input type="text" class="form-control" name="restaurant-name" id="restaurant-name">
+                </div>
+            </div>
+
+            <div class="group">
+                  <label>Restaurant Type</label>
+                  <div>
+                      <input type="text" class="form-control" name="restaurant-type" id="restaurant-type">
+                  </div>
+            </div>
+
+            <div class="group">
+                  <label>Date and time of the visit</label>
+                  <div>
+                      <input type="date" class="form-control" name="date-and-time" id="date-and-time">
+                  </div>
+            </div>
+
+            <div class="group">
+                  <label>Images</label>
+                  <div>
+                      <input type="file" class="file-uploader pull-left" name="images[]" id="images">
+                      <ul id="ulTag"></ul>
+                  </div>
+            </div>
+
+            <div class="group" style="margin-top: 40px;">
+                  <label>Average meal price person</label>
+                  <div>
+                      <input type="text" class="form-control" name="average-price" id="average-price">
+                  </div>
+            </div>
+
+            <div class="group">
+                  <label>Service rating (Stars)</label>
+                  <div>
+                      <select class="form-control" name="service-rating" id="service-rating">
+                      <option>Choose rating</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                  </div>
+            </div>
+
+            <div class="group">
+                  <label>Cleanliness rating (Stars)</label>
+                  <div>
+                      <select class="form-control" name="clean-rate" id="clean-rate">
+                        <option>Choose rating (Stars)</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                  </div>
+            </div>
+
+            <div class="group">
+                  <label>Food quality rating (Stars)</label>
+                  <div>
+                      <select class="form-control" name="food-rate" id="food-rate">
+                        <option>Choose rating (Stars)</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                  </div>
+            </div>
+
+            <div class="group">
+                  <label>Notes</label>
+                  <div>
+                      <textarea name="notes" rows="9" cols="48" id="notes"></textarea>
+                  </div>
+            </div>
+
+            <div class="group">
+                  <label>Name of the reporter</label>
+                  <div>
+                      <input type="text" class="form-control" name="reporter" id="reporter">
+                  </div>
+            </div>
+            <hr>
+            <div>
+                <div class="group">
+                  <input type="submit" value="SUBMIT" class="btn btn-primary" style="font-weight: bold;">
+                  <a class="btn btn-danger" href="#" role="button" style="color: white;">BACK</a>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<!-- end of header wrapper -->
-<div class="container-contact100">
-    <div class="wrap-contact100">
-        <form class="contact100-form validate-form">
-            <span class="contact100-form-title">
-                Feedback Form
-            </span>
-
-            <div class="wrap-input100 validate-input" data-validate="Name is required">
-                <span class="label-input100">Restaurant Name</span>
-                <input class="input100" type="text" name="name" placeholder="Enter restaurant name">
-                <span class="focus-input100"></span>
-            </div>
-            <div class="wrap-input100 validate-input" data-validate="Name is required">
-                <span class="label-input100">Restaurant Type</span>
-                <input class="input100" type="text" name="name" placeholder="Enter restaurant type">
-                <span class="focus-input100"></span>
-            </div>
-            <div class="wrap-input100 validate-input" data-validate="Name is required">
-                <span class="label-input100">Date and time of the visit</span>
-                <input class="input100" type="text" name="name" placeholder="Enter Date and time of the visit">
-                <span class="focus-input100"></span>
-            </div>
-            <div class="wrap-input100 validate-input" data-validate="Name is required">
-                <span class="label-input100">Average meal price per person</span>
-                <input class="input100" type="text" name="name" placeholder="Enter Average meal price per person">
-                <span class="focus-input100"></span>
-            </div>
-
-            <div class="wrap-input100 input100-select">
-                <span class="label-input100">Service rating</span>
-                <div>
-                    <select class="selection-2" name="service">
-                        <option>Choose rating (Stars)</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <span class="focus-input100"></span>
-            </div>
-
-            <div class="wrap-input100 input100-select">
-                <span class="label-input100">Cleanliness rating</span>
-                <div>
-                    <select class="selection-2" name="budget">
-                        <option>Choose rating (Stars)</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <span class="focus-input100"></span>
-            </div>
-            <div class="wrap-input100 input100-select">
-                <span class="label-input100">Food quality rating</span>
-                <div>
-                    <select class="selection-2" name="budget">
-                        <option>Choose rating (Stars)</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <span class="focus-input100"></span>
-            </div>
-            <div class="wrap-input100 validate-input" data-validate = "Message is required">
-                <span class="label-input100">Notes</span>
-                <textarea class="input100" name="message" placeholder="Your notes here..."></textarea>
-                <span class="focus-input100"></span>
-            </div>
-            <div class="wrap-input100 validate-input" data-validate="Name is required">
-                <span class="label-input100">Name of the reporter</span>
-                <input class="input100" type="text" name="name" placeholder="Enter name of the reporter">
-                <span class="focus-input100"></span>
-            </div>
-
-            <div class="container-contact100-form-btn">
-                <div class="wrap-contact100-form-btn">
-                    <div class="contact100-form-bgbtn"></div>
-                    <button class="contact100-form-btn">
-                        <span>
-                            Send Feedback
-                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-
-
-<div id="dropDownSelect1"></div>
-
-<!--===============================================================================================-->
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/select2/select2.min.js"></script>
-<script>
-    $(".selection-2").select2({
-        minimumResultsForSearch: 20,
-        dropdownParent: $('#dropDownSelect1')
-    });
-</script>
-<!--===============================================================================================-->
-<script src="vendor/daterangepicker/moment.min.js"></script>
-<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-<script src="js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'UA-23581568-13');
-</script>
-
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/database.js"></script>
+  <script type="text/javascript">
+      app.initialize();
+  </script>
 </body>
+
 </html>
