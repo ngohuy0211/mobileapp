@@ -1,43 +1,61 @@
 const RestaurantData = [
     {
-        res_name: 'Restaurant demo',
-        res_type: 'Demo',
+        name: 'Restaurant demo',
+        type: 'Demo',
+        address: 'abcxyz',
+        hotline: '123456',
         date_time: 'abc',
         average_price: '300000',
-        ser_rating: 'good',
-        clean_rating: 'good',
-        food_rating: 'good',
-        notes: ''
+        service_rating: 1,
+        clean_rating: 2,
+        food_rating: 3,
+        notes: '',
+        reporter: 'Huy',
+        image: "https://media-cdn.tripadvisor.com/media/photo-s/0e/cc/0a/dc/restaurant-chocolat.jpg"
+
     },
     {
         res_name: 'Restaurant demo',
         res_type: 'Demo',
+        address: 'abcxyz',
+        hotline: '123456',
+        hotline: '',
         date_time: 'abc',
         average_price: '300000',
         ser_rating: 'good',
         clean_rating: 'good',
         food_rating: 'good',
-        notes: ''
+        notes: '',
+        reporter: 'Huy',
+        image: "https://media-cdn.tripadvisor.com/media/photo-s/0e/cc/0a/dc/restaurant-chocolat.jpg"
     },
     {
         res_name: 'Restaurant demo',
         res_type: 'Demo',
+        address: 'abcxyz',
+        hotline: '123456',
         date_time: 'abc',
         average_price: '300000',
         ser_rating: 'good',
         clean_rating: 'good',
         food_rating: 'good',
-        notes: ''
+        notes: '',
+        reporter: 'Huy',
+        image: "https://media-cdn.tripadvisor.com/media/photo-s/0e/cc/0a/dc/restaurant-chocolat.jpg"
     },
     {
         res_name: 'Restaurant demo',
         res_type: 'Demo',
+        address: 'abcxyz',
+        hotline: '123456',
         date_time: 'abc',
         average_price: '300000',
         ser_rating: 'good',
         clean_rating: 'good',
         food_rating: 'good',
-        notes: ''
+        notes: '',
+        reporter: 'Huy',
+        image: "https://media-cdn.tripadvisor.com/media/photo-s/0e/cc/0a/dc/restaurant-chocolat.jpg"
     }
 ]
 
