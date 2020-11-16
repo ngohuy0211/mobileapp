@@ -48,7 +48,8 @@
                   <div class="text">
                     <div class="res-name">${cursor.value.restaurant_name}</div>
                     <div class="res-type">Restaurant Type: ${cursor.value.restaurant_type}</div>
-                    <div class="res-average-rate">Average Rating: ${cursor.value.rating}</div>
+                    <div class="res-phone">Hotline: ${cursor.value.hotline} </div>
+                    <div class="res-average-rate">Average Rating: ${cursor.value.rating} <span class="fa fa-star"></span></div>
                   </div>
                   <div class="button">
                     <input type="button" value="Delete" onClick="xoa(${cursor.value.id})" class="btn btn-primary">
@@ -70,7 +71,7 @@
       .delete(parseInt(id));
       
       request.onsuccess = function(event) {
-         alert("prasad entry has been removed from your database.");
+         alert("Delete Successfull!!.");
          window.location = "index.html"
       };
    }
@@ -82,7 +83,7 @@ function loadDetail() {
    var request = objectStore.get(parseInt(id));
    
    request.onerror = function(event) {
-      alert("Unable to retrieve daa from database!");
+      alert("Unable to retrieve data from database!");
    };
    
    request.onsuccess = function(event) {
@@ -90,9 +91,11 @@ function loadDetail() {
       // console.log(request.result);
       $('.name').text(request.result.restaurant_name)
       $('.type').text(request.result.restaurant_type)
+      $('.address').text(request.result.address)
+      $('.hotline').text(request.result.hotline)
       $('.datexTime').text(request.result.date_time)
       $('.avgPrice').text(request.result.ave_meal_price)
-      $('.sRate').text(request.resultservice_rating)
+      $('.sRate').text(request.result.service_rating)
       $('.cRate').text(request.result.cleanliness_rating)
       $('.fRate').text(request.result.food_quality_rating)
       $('.notes').text(request.result.notes)            
@@ -126,7 +129,7 @@ function add(feedback) {
    .add(feedback);
    
    request.onsuccess = function(event) {
-    alert("oke")
+    alert("Feedback Successfull!!")
       window.location = "index.html"         };
    
    request.onerror = function(event) {
@@ -136,20 +139,22 @@ function add(feedback) {
 
 function addc() {
    var sum = parseInt($('#service-rating').val()) + parseInt($('#clean-rating').val()) + parseInt($('#food-rating').val())
-   var kq = Math.floor(sum/3)
-   if($('#restaurant-name') == "" || $('#restaurant-type').val() == "" || $('#datextime').val() == "" || $('#service-rating').val() =="" || $('#average-price').val() =="" || $('#clean-rating').val() == "" ||$('#notes').val() == "" || $('#reporter').val() == "") {
+   var averageStar = Math.floor(sum/3)
+   if($('#restaurant-name') == "" || $('#restaurant-type').val() == "" || $('#address').val() == "" || $('#hotline').val() == "" || $('#datextime').val() == "" || $('#service-rating').val() =="" || $('#average-price').val() =="" || $('#clean-rating').val() == "" ||$('#notes').val() == "" || $('#reporter').val() == "") {
 
    } else {
       const feedback = {
          restaurant_name: $('#restaurant-name').val(),
          restaurant_type: $('#restaurant-type').val(),
+         address: $('#address').val(),
+         hotline: $('#hotline').val(),
          date_time: $('#datextime').val(),
          ave_meal_price: $('#average-price').val(),
          service_rating: $('#service-rating').val(),
          cleanliness_rating: $('#clean-rating').val(),
          food_quality_rating: $('#food-rating').val(),
          notes: $('#notes').val(),
-         rating: kq,
+         rating: averageStar,
          reporter_name: $('#reporter').val()
       }
       add(feedback)
