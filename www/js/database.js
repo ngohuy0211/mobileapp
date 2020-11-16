@@ -60,7 +60,7 @@
           </div>`
             cursor.continue();
          }
-         $('.body').append(newIndex);
+         $('#body').append(newIndex);
 
       };
    }
