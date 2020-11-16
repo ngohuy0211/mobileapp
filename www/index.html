@@ -25,37 +25,27 @@
         </div>
       </div>
       <div class="topnav">
-        <a class="active" href="index.html">Home</a>
-        <a class="active" href="feedback.html">Feedback</a>
-        <a class="active" href="search.html">Search</a>
+        <a class="active" href="index.html" onClick="home()">Home</a>
+        <a class="active" href="#" onClick="feedback()">Feedback</a>
       </div>
     </div>
     <div class="body">
-      <div class="list-restaurant" id="list-res">
-        <div>
-          <div class="col-md-4 mb-3">
-            <div class="row">
-              <div class="image">
-                <img src="https://znews-photo.zadn.vn/w660/Uploaded/kbd_bcvi/2019_11_23/5d828d976f24eb1a752053b5_thumb.jpg" width="280" height="160" alt="">
-              </div>
-              <div class="text">
-                <div class="res-name">Restaurant 1</div>
-                <div class="res-type">Restaurant Type: </div>
-                <div class="res-average-rate">Average Rating:</div>
-              </div>
-              <div class="button">
-                <input type="button" value="Delete" class="btn btn-primary">
-                <input type="button" value="Detail" class="btn btn-primary">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
-  <script type="text/javascript" src="cordova.js"></script>
+  <script>
+    function feedback() {
+      window.location = "feedback.html"
+    }
+    function home() {
+      window.location = "index.html"
+
+    }
+  </script>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/database.js"></script>
+  <script>
+  </script>
   <script type="text/javascript">
       app.initialize();
   </script>

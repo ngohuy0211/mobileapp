@@ -23,9 +23,8 @@
           </div>
         </div>
         <div class="topnav">
-          <a class="active" href="index.html">Home</a>
-          <a class="active" href="feedback.html">Feedback</a>
-          <a class="active" href="search.html">Search</a>
+            <a class="active" href="index.html" onClick="home()">Home</a>
+            <a class="active" href="#" onClick="feedback()">Feedback</a>
         </div>
     </div>
     <div class="form-detail">
@@ -33,57 +32,64 @@
             <h3 class="" style="text-align: center">Restaurant Detail</h3>
             <div class="form-group">
                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Restaurant Name:</label>
-                <div class="col-md-10 col-sm-9 col-xs-12">
-                    
+                <div class="col-md-10 col-sm-9 col-xs-12" >
+                    <p class="name"></p>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Restaurant Type:</label>
                 <div class="col-md-10 col-sm-9 col-xs-12">
-                    
+                    <p class="type"></p>
+
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Date and time of the visit:</label>
-                <div class="col-md-10 col-sm-9 col-xs-12">
-                    
+                <div class="col-md-10 col-sm-9 col-xs-12" >
+                    <p class="datexTime"></p>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Average meal price person:</label>
-                <div class="col-md-10 col-sm-9 col-xs-12">
-                    
+                <div class="col-md-10 col-sm-9 col-xs-12" >
+                    <p class="avgPrice"></p>
+
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2  col-sm-3 col-xs-12 control-label">Service rating (Stars):</label>
-                <div class="col-md-10 col-sm-9 col-xs-12">
+                <label class="col-md-2  col-sm-3 col-xs-12 control-label" >Service rating (Stars):</label>
+                <div class="col-md-10 col-sm-9 col-xs-12" class="">
+                    <p class="sRate"></p>
 
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-2  col-sm-3 col-xs-12 control-label">Cleanliness rating (Stars):</label>
-                <div class="col-md-10 col-sm-9 col-xs-12">
+                <div class="col-md-10 col-sm-9 col-xs-12" class="">
+                    <p class="cRate"></p>
 
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-2  col-sm-3 col-xs-12 control-label">Food quality rating (Stars):</label>
-                <div class="col-md-10 col-sm-9 col-xs-12">
+                <div class="col-md-10 col-sm-9 col-xs-12" class="">
+                    <p class="fRate"></p>
 
                 </div>
             </div>
             <div class="form-group">
               <label class="col-md-2  col-sm-3 col-xs-12 control-label">Note:</label>
-              <div class="col-md-10 col-sm-9 col-xs-12">
+              <div class="col-md-10 col-sm-9 col-xs-12" class="">
+                <p class="notes"></p>
 
               </div>
             </div>
             <div class="form-group">
               <label class="col-md-2  col-sm-3 col-xs-12 control-label">Reporter name:</label>
-              <div class="col-md-10 col-sm-9 col-xs-12">
+              <div class="col-md-10 col-sm-9 col-xs-12" class="">
+                <p class="rName"></p>
 
               </div>
             </div>
@@ -91,15 +97,22 @@
         <hr>
         <div class="form-group">
             <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-                <a class="btn btn-danger" href="" role="button" style="color: white;">BACK</a>
+                <a class="btn btn-danger" href="index.html" role="button" style="color: white;">BACK</a>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/database.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
+
+    <script>
+        function feedback() {
+          window.location = "feedback.html"
+        }
+        function home() {
+          window.location = "index.html"
+    
+        }
+        loadDetail()
+
+      </script>
 </body>
 </html>
