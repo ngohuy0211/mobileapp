@@ -43,7 +43,7 @@
               <div class="col-md-4 mb-3">
                 <div class="row">
                   <div class="image">
-                    <img src="${cursor.value.image}" width="280" height="160" alt="">
+                    <img src="${cursor.url.image}" width="280" height="160" alt="">
                   </div>
                   <div class="text">
                     <div class="res-name">${cursor.value.restaurant_name}</div>
@@ -94,7 +94,7 @@ function loadDetail() {
       $('.address').text(request.result.address)
       $('.hotline').text(request.result.hotline)
       $('.datexTime').text(request.result.date_time)
-      $('.image').url(request.result.imageContainer)
+      $('.image').url(request.result.image)
       $('.avgPrice').text(request.result.ave_meal_price)
       $('.sRate').text(request.result.service_rating)
       $('.cRate').text(request.result.cleanliness_rating)
@@ -150,7 +150,7 @@ function addc() {
          address: $('#address').val(),
          hotline: $('#hotline').val(),
          date_time: $('#datextime').val(),
-         image: $('#imageContainer').val(),
+         image: $('#imageContainer').url(),
          ave_meal_price: $('#average-price').val(),
          service_rating: $('#service-rating').val(),
          cleanliness_rating: $('#clean-rating').val(),
