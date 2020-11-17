@@ -94,7 +94,7 @@ function loadDetail() {
       $('.address').text(request.result.address)
       $('.hotline').text(request.result.hotline)
       $('.datexTime').text(request.result.date_time)
-      $('.image').url(request.result.image)
+      $('.image').url(request.result.imageContainer)
       $('.avgPrice').text(request.result.ave_meal_price)
       $('.sRate').text(request.result.service_rating)
       $('.cRate').text(request.result.cleanliness_rating)
