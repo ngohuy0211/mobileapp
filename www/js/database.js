@@ -43,7 +43,7 @@
               <div class="col-md-4 mb-3">
                 <div class="row">
                   <div class="image">
-                    <img src="https://znews-photo.zadn.vn/w660/Uploaded/kbd_bcvi/2019_11_23/5d828d976f24eb1a752053b5_thumb.jpg" width="280" height="160" alt="">
+                    <img src="${cursor.value.image}" width="280" height="160" alt="">
                   </div>
                   <div class="text">
                     <div class="res-name">${cursor.value.restaurant_name}</div>
@@ -94,6 +94,7 @@ function loadDetail() {
       $('.address').text(request.result.address)
       $('.hotline').text(request.result.hotline)
       $('.datexTime').text(request.result.date_time)
+      $('.image').url(request.result.image)
       $('.avgPrice').text(request.result.ave_meal_price)
       $('.sRate').text(request.result.service_rating)
       $('.cRate').text(request.result.cleanliness_rating)
@@ -149,6 +150,7 @@ function addc() {
          address: $('#address').val(),
          hotline: $('#hotline').val(),
          date_time: $('#datextime').val(),
+         image: $('#imageContainer').val(),
          ave_meal_price: $('#average-price').val(),
          service_rating: $('#service-rating').val(),
          cleanliness_rating: $('#clean-rating').val(),
@@ -159,13 +161,28 @@ function addc() {
       }
       add(feedback)
    }
-   }
+}
 
-// $('#addRestaurant').on('submit', function(event){
-//    console.log("alo");
+function takePicture() {
+   navigator.camera.getPicture(onSuccess, onFail,{
+       quality: 50,
+       // allow = true co nghia la sau khi chup xong co the chinh sua anh roi moi upload len
+       allowEdit: false, 
+       // anh tra ve
+       destinationType: Camera.DestinationType.FILE_URI
+   })
+}
 
-//    // console.log(feedback);
-//    // 
-//    
+function onSuccess(url) {
+   alert(url);
 
-// })
+   ic = document.getElementById('imageContainer');
+
+   ic.innerHTML = '<img src ="' + url + '" width="50%" />';
+
+}
+
+function onFail() {
+   alert('Failed because: ' + message);
+}
+
