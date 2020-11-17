@@ -43,7 +43,7 @@
               <div class="col-md-4 mb-3">
                 <div class="row">
                   <div class="image">
-                    <img src="${cursor.url.image}" width="280" height="160" alt="">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4jW2HFBKboZvE_UOJKwwLNze007IUvyfQ9Q&usqp=CAU" width="280" height="160" alt="">
                   </div>
                   <div class="text">
                     <div class="res-name">${cursor.value.restaurant_name}</div>
@@ -52,8 +52,8 @@
                     <div class="res-average-rate">Average Rating: ${cursor.value.rating} <span class="fa fa-star"></span></div>
                   </div>
                   <div class="button">
-                    <input type="button" value="Delete" onClick="xoa(${cursor.value.id})" class="btn btn-primary">
-                    <input type="button" value="Detail" onClick='detail(${cursor.value.id})' class="btn btn-primary">
+                    <input type="button" value="Delete" onClick="deleteRestaurant(${cursor.value.id})" class="btn btn-primary">
+                    <input type="button" value="Detail" onClick="detailRestaurant(${cursor.value.id})" class="btn btn-primary">
                   </div>
                 </div>
               </div>
@@ -65,16 +65,15 @@
 
       };
    }
-   function xoa(id) {
-      var request = db.transaction(["huyDb"], "readwrite")
-      .objectStore("huyDb")
-      .delete(parseInt(id));
-      
-      request.onsuccess = function(event) {
-         alert("Delete Successfull!!.");
-         window.location = "index.html"
-      };
+function deleteRestaurant(id) {
+   var request = db.transaction(["huyDb"], "readwrite")
+   .objectStore("huyDb")
+   .delete(parseInt(id));
+   request.onsuccess = function(event) {
+      alert("Delete Successfull!!.");
+      window.location = "index.html"
    }
+}
 
 function loadDetail() {
   var id = document.URL.split('=')[1]
@@ -94,7 +93,6 @@ function loadDetail() {
       $('.address').text(request.result.address)
       $('.hotline').text(request.result.hotline)
       $('.datexTime').text(request.result.date_time)
-      $('.image').url(request.result.image)
       $('.avgPrice').text(request.result.ave_meal_price)
       $('.sRate').text(request.result.service_rating)
       $('.cRate').text(request.result.cleanliness_rating)
@@ -104,7 +102,7 @@ function loadDetail() {
    };
 }
  
-function detail(id) {
+function detailRestaurant(id) {
    window.location = 'form-detail.html?id=' + id
 }
 function view(id) {
@@ -130,7 +128,7 @@ function add(feedback) {
    .add(feedback);
    
    request.onsuccess = function(event) {
-    alert("Feedback Successfull!!")
+      alert("Feedback Successfull!!")
       window.location = "index.html"         };
    
    request.onerror = function(event) {
@@ -138,11 +136,11 @@ function add(feedback) {
    }
 }
 
-function addc() {
+function submitFeedback() {
    var sum = parseInt($('#service-rating').val()) + parseInt($('#clean-rating').val()) + parseInt($('#food-rating').val())
    var averageStar = Math.floor(sum/3)
    if($('#restaurant-name') == "" || $('#restaurant-type').val() == "" || $('#address').val() == "" || $('#hotline').val() == "" || $('#datextime').val() == "" || $('#service-rating').val() =="" || $('#average-price').val() =="" || $('#clean-rating').val() == "" ||$('#notes').val() == "" || $('#reporter').val() == "") {
-
+      alert("Feedback Failed!!")
    } else {
       const feedback = {
          restaurant_name: $('#restaurant-name').val(),
@@ -150,7 +148,6 @@ function addc() {
          address: $('#address').val(),
          hotline: $('#hotline').val(),
          date_time: $('#datextime').val(),
-         image: $('#imageContainer').url(),
          ave_meal_price: $('#average-price').val(),
          service_rating: $('#service-rating').val(),
          cleanliness_rating: $('#clean-rating').val(),
