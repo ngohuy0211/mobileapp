@@ -73,6 +73,8 @@ function deleteRestaurant(id) {
       alert("Delete Successfull!!.");
       window.location = "index.html"
    }
+   navigator.notification.beep(1);
+   navigator.notification.vibrate(1000);
 
 }
 
@@ -158,6 +160,8 @@ function submitFeedback() {
          reporter_name: $('#reporter').val()
       }
       add(feedback)
+      navigator.notification.beep(1);
+      navigator.notification.vibrate(1000);
    }
 }
 
