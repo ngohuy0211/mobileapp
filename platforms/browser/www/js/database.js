@@ -71,11 +71,9 @@ function deleteRestaurant(id) {
    .delete(parseInt(id));
    request.onsuccess = function(event) {
       alert("Delete Successfull!!.");
+      navigator.notification.beep(1);
       window.location = "index.html"
    }
-   navigator.notification.beep(1);
-   navigator.notification.vibrate(1000);
-
 }
 
 function loadDetail() {
@@ -142,7 +140,7 @@ function add(feedback) {
 function submitFeedback() {
    var sum = parseInt($('#service-rating').val()) + parseInt($('#clean-rating').val()) + parseInt($('#food-rating').val())
    var averageStar = Math.floor(sum/3)
-   if($('#restaurant-name') == "" || $('#restaurant-type').val() == "" || $('#address').val() == "" || $('#hotline').val() == "" || $('#datextime').val() == "" || $('#service-rating').val() =="" || $('#average-price').val() =="" || $('#clean-rating').val() == "" ||$('#notes').val() == "" || $('#reporter').val() == "") {
+   if($('#restaurant-name').val() == "" || $('#restaurant-type').val() == "" || $('#address').val() == "" || $('#hotline').val() == "" || $('#datextime').val() == "" || $('#service-rating').val() =="" || $('#average-price').val() =="" || $('#clean-rating').val() == "" ||$('#notes').val() == "" || $('#reporter').val() == "") {
       alert("Feedback Failed!!")
    } else {
       const feedback = {
