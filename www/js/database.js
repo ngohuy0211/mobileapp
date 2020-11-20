@@ -70,12 +70,11 @@ function deleteRestaurant(id) {
    .objectStore("huyDb")
    .delete(parseInt(id));
    request.onsuccess = function(event) {
+      navigator.notification.beep(1);
+      navigator.notification.vibrate(1000);
       alert("Delete Successfull!!.");
       window.location = "index.html"
    }
-   navigator.notification.beep(1);
-   navigator.notification.vibrate(1000);
-
 }
 
 function loadDetail() {
