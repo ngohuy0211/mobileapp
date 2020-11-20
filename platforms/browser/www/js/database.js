@@ -73,6 +73,7 @@ function deleteRestaurant(id) {
       alert("Delete Successfull!!.");
       window.location = "index.html"
    }
+
 }
 
 function loadDetail() {
