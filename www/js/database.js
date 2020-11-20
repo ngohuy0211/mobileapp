@@ -70,8 +70,8 @@ function deleteRestaurant(id) {
    .objectStore("huyDb")
    .delete(parseInt(id));
    request.onsuccess = function(event) {
-      alert("Delete Successfull!!.");
       navigator.notification.beep(1);
+      alert("Delete Successfull!!.");
       window.location = "index.html"
    }
 }
