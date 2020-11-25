@@ -191,6 +191,6 @@ function ring() {
 }
 
 function vibrate() {
-   navigator.notification.vibrate(3000);
+   navigator.notification.vibrate(1000);
 }
 
