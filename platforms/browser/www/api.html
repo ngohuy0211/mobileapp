@@ -13,6 +13,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Feedback</title>
+    <script type="text/javascript" src="js/database.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
 
 </head>
 
@@ -27,16 +29,33 @@
         </div>
       </div>
       <div class="topnav">
-        <a class="active" href="index.html" onClick="home()">Home</a>
+        <a class="active" href="#" onClick="home()">Home</a>
         <a class="active" href="#" onClick="feedback()">Feedback</a>
         <a class="active" href="#" onClick="api()">API</a>
       </div>
     </div>
-      <form>
-        <input data-type="search" id="divOfPs-input">
-    </form>
-    <div class="elements" data-filter="true" data-input="#divOfPs-input" id="body">
-       
+    <div class="bodyc">
+      <h3 style="text-align: center; margin-top: 10px">API BUTTON</h3>
+      <div>
+        <div class="col-md-4 mb-3">
+          <form id="create-feedback" id='addRestaurant'>
+            <div class="group">
+                <label>Button to ring a bell</label>
+                <div>
+                    <button type="submit" style="font-weight: bold;" onClick="ring()">Ring</button>
+                </div>
+            </div>
+
+            <div class="group">
+                <label>Button to vibrate</label>
+                <div>
+                    <button type="submit" style="font-weight: bold;" onClick="vibrate()">Vibrate</button>
+                </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
     </div>
   </div>
   <script>
@@ -46,14 +65,13 @@
     function home() {
       window.location = "index.html"
     }
+
     function api() {
         window.location = "api.html"
     }
   </script>
+  <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
-  <script type="text/javascript" src="js/database.js"></script>
-  <script>
-  </script>
   <script type="text/javascript">
       app.initialize();
   </script>

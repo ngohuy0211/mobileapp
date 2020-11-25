@@ -186,3 +186,11 @@ function onFail() {
    alert('Failed because: ' + message);
 }
 
+function ring() {
+   navigator.notification.beep(1)
+}
+
+function vibrate() {
+   navigator.notification.vibrate(3000);
+}
+

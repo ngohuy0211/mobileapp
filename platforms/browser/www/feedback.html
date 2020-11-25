@@ -24,13 +24,14 @@
       <div class="top">
         <div class="col-sm-12 col-md-12 col-xs-12 hover">
           <div class="name-icon">
-            Feeback Restaurant
+            FEEDBACK RESTAURANT
           </div>
         </div>
       </div>
       <div class="topnav">
         <a class="active" href="index.html">Home</a>
         <a class="active" href="feedback.html">Feedback</a>
+        <a class="active" href="#" onclick="api()">API</a>
       </div>
     </div>
     <div class="bodyc">
@@ -76,7 +77,7 @@
             <div class="group">
                   <label>Images</label>
                   <div>
-                      <input type="button" class="btn - btn-primary" value="Take a Picture" onclick="takePicture()">
+                      <input type="button" class="btn btn-primary" value="Take a Picture" onclick="takePicture()">
                       <div id="imageContainer"></div>
                   </div>
             </div>
@@ -157,7 +158,9 @@
     }
     function home() {
       window.location = "index.html"
-
+    }
+    function api() {
+        window.location = "api.html"
     }
   </script>
   <script type="text/javascript" src="js/index.js"></script>
