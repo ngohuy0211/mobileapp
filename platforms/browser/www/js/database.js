@@ -31,40 +31,39 @@
       
    }
 
-   function readAll() {
-      var objectStore = db.transaction("huyDb").objectStore("huyDb");
-      
-      objectStore.openCursor().onsuccess = function(event) {
-         var cursor = event.target.result;
-         let newIndex
-         if(cursor) {
-            newIndex = `<div class="list-restaurant" id="list-res">
-            <div>
-              <div class="col-md-4 mb-3">
-                <div class="row">
-                  <div class="image">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4jW2HFBKboZvE_UOJKwwLNze007IUvyfQ9Q&usqp=CAU" width="280" height="160" alt="">
-                  </div>
-                  <div class="text">
-                    <div class="res-name">${cursor.value.restaurant_name}</div>
-                    <div class="res-type">Restaurant Type: ${cursor.value.restaurant_type}</div>
-                    <div class="res-phone">Hotline: ${cursor.value.hotline} </div>
-                    <div class="res-average-rate">Average Rating: ${cursor.value.rating} <span class="fa fa-star"></span></div>
-                  </div>
-                  <div class="button">
-                    <input type="button" value="Delete" onClick="deleteRestaurant(${cursor.value.id})" class="btn btn-primary">
-                    <input type="button" value="Detail" onClick="detailRestaurant(${cursor.value.id})" class="btn btn-primary">
-                  </div>
-                </div>
-              </div>
+function readAll() {
+   var objectStore = db.transaction("huyDb").objectStore("huyDb");
+   
+   objectStore.openCursor().onsuccess = function(event) {
+      var cursor = event.target.result;
+      let newIndex
+      if(cursor) {
+         newIndex = `<div class="list-restaurant" id="list-res">
+         <div>
+            <div class="col-md-4 mb-3">
+               <div class="row">
+               <div class="image">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4jW2HFBKboZvE_UOJKwwLNze007IUvyfQ9Q&usqp=CAU" width="280" height="160" alt="">
+               </div>
+               <div class="text">
+                  <div class="res-name">${cursor.value.restaurant_name}</div>
+                  <div class="res-type">Restaurant Type: ${cursor.value.restaurant_type}</div>
+                  <div class="res-phone">Hotline: ${cursor.value.hotline} </div>
+                  <div class="res-average-rate">Average Rating: ${cursor.value.rating} <span class="fa fa-star"></span></div>
+               </div>
+               <div class="button">
+                  <input type="button" value="Delete" onClick="deleteRestaurant(${cursor.value.id})" class="btn btn-primary">
+                  <input type="button" value="Detail" onClick="detailRestaurant(${cursor.value.id})" class="btn btn-primary">
+               </div>
+               </div>
             </div>
-          </div>`
-            cursor.continue();
-         }
-         $('#body').append(newIndex);
-
-      };
-   }
+         </div>
+         </div>`
+         cursor.continue();
+      }
+      $('#body').append(newIndex);
+   };
+}
 function deleteRestaurant(id) {
    var request = db.transaction(["huyDb"], "readwrite")
    .objectStore("huyDb")
@@ -118,9 +117,8 @@ function view(id) {
       //       Age: " + request.result.age + ", Email: " + request.result.email);
       // } else {
       //    alert("Kenny couldn't be found in your database!");
-      // }
+      }
    };
-}
 }
 
 function add(feedback) {

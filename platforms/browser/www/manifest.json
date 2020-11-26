@@ -1,8 +1,8 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "Feedback Restaurant",
-  "short_name": "Feedback Restaurant",
+  "name": "I-Rate App",
+  "short_name": "I-Rate App",
   "version": "com.phonegap.helloworld",
   "description": "Hello World sample application that responds to the deviceready event.",
   "author": "PhoneGap Team",
